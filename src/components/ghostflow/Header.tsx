@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GhostButton } from "./GhostButton";
-import logo from "@/assets/ghostflow-logo.png";
+import logo from "@/assets/ghostflow-mascot-white.png";
+
+const quoteUrl =
+  "https://wa.me/5585987767232?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20projeto.";
 
 const links = [
   { label: "Início", href: "#inicio" },
   { label: "Serviços", href: "#servicos" },
   { label: "Projetos", href: "#projetos" },
-  { label: "Sobre", href: "#sobre" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -64,7 +66,9 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <GhostButton href="#contato">Solicitar orçamento</GhostButton>
+          <GhostButton href={quoteUrl} target="_blank" rel="noopener noreferrer">
+            Solicitar orçamento
+          </GhostButton>
         </nav>
 
         <button
@@ -96,7 +100,9 @@ export function Header() {
             </a>
           ))}
           <GhostButton
-            href="#contato"
+            href={quoteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             size="lg"
             className="mt-3 w-full"
             onClick={() => setOpen(false)}

@@ -1,11 +1,10 @@
 import { Github, Instagram, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
-import logo from "@/assets/ghostflow-logo.png";
+import logo from "@/assets/ghostflow-mascot-white.png";
 
-const nav = ["Início", "Serviços", "Projetos", "Sobre", "Contato"];
-const navHrefs = ["#inicio", "#servicos", "#projetos", "#sobre", "#contato"];
+const nav = ["Início", "Serviços", "Projetos", "Contato"];
+const navHrefs = ["#inicio", "#servicos", "#projetos", "#contato"];
 const services = [
   "Desenvolvimento Web",
-  "Desenvolvimento Mobile",
   "Sistemas sob medida",
   "UI/UX Design",
   "Automação",
@@ -37,12 +36,18 @@ export function Footer() {
             <ul className="mt-6 flex gap-3">
               {[
                 { icon: Linkedin, label: "LinkedIn" },
-                { icon: Instagram, label: "Instagram" },
+                {
+                  icon: Instagram,
+                  label: "Instagram",
+                  href: "https://www.instagram.com/ghostflow.ti?igsi=bG5sNDcwaHBnY3Nq&utm_source=qr",
+                },
                 { icon: Github, label: "GitHub" },
-              ].map(({ icon: Icon, label }) => (
+              ].map(({ icon: Icon, label, href = "#contato" }) => (
                 <li key={label}>
                   <a
-                    href="#contato"
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                     aria-label={label}
                     className="grid h-10 w-10 place-items-center rounded-full border border-navy-foreground/15 text-navy-foreground/70 transition-colors hover:border-turquoise hover:text-turquoise"
                   >
@@ -90,16 +95,16 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-navy-foreground/60">
               <li>
                 <a
-                  href="mailto:contato@ghostflow.com"
+                  href="mailto:ghostflow.ti@gmail.com"
                   className="inline-flex items-center gap-2 transition-colors hover:text-turquoise"
                 >
                   <Mail className="h-4 w-4 shrink-0" />
-                  contato@ghostflow.com
+                  ghostflow.ti@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/5500000000000"
+                  href="https://wa.me/5585987767232"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 transition-colors hover:text-turquoise"

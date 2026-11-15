@@ -1,7 +1,10 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { GhostButton } from "./GhostButton";
 import { Reveal } from "./Reveal";
-import logo from "@/assets/ghostflow-logo.png";
+import logo from "@/assets/ghostflow-mascot-white.png";
+
+const quoteUrl =
+  "https://wa.me/5585987767232?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20projeto.";
 
 export function FinalCta() {
   return (
@@ -31,21 +34,16 @@ export function FinalCta() {
             Conte para a GhostFlow o que você precisa e vamos descobrir juntos a melhor forma de
             transformar sua ideia em uma solução digital.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <GhostButton href="mailto:contato@ghostflow.com" size="lg" className="w-full sm:w-auto">
-              Solicitar orçamento
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </GhostButton>
+          <div className="mt-9">
             <GhostButton
-              href="https://wa.me/5500000000000"
+              href={quoteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              variant="onDark"
               size="lg"
               className="w-full sm:w-auto"
             >
-              <MessageCircle className="h-4 w-4" />
-              Falar no WhatsApp
+              Solicitar orçamento
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </GhostButton>
           </div>
         </Reveal>
